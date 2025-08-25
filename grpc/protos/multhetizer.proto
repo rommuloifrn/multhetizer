@@ -1,0 +1,18 @@
+syntax = "proto3";                  // versão da linguagem Proto
+package multhetizer.v1;               // namespace do contrato
+
+// Definição do serviço
+service Play {
+  rpc SendNote (Note) returns (Confirmation);
+}
+
+// Estruturas de dados
+message Note {
+  string pitch = 1;
+  int32 duration = 2;
+}
+
+message Confirmation {
+  bool ok = 1;
+  string message = 2;
+}
